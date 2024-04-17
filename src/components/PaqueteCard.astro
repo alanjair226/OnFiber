@@ -1,0 +1,75 @@
+---
+const bgcard = "#212121";
+const accent = "#D918F9";
+
+interface Props {
+	title: string;
+	phrase: string;
+    body: string;
+    price: string;
+}
+
+const { title, body, phrase, price } = Astro.props;
+---
+
+<article class="w-full p-3 font-medium text-xl sm:w-full flex  justify-between card ">
+    <h3 class=" text-xl text-center">{title}</h3>
+    <div class="p-3 rounded-lg text-black text-sm font-semibold my-5 " style="background: rgb(176,39,228);
+    background: linear-gradient(90deg, rgba(176,39,228,1) 0%, rgba(200,150,219,1) 100%); box-shadow: -10px 7px 20px 1px rgba(0,0,0,0.62);
+    -webkit-box-shadow: -10px 7px 20px 1px rgba(0,0,0,0.62);
+    -moz-box-shadow: -10px 7px 20px 1px rgba(0,0,0,0.62);;">
+        <p class=" text-lg font-medium">{phrase}</p>
+    </div>
+    <p class="text-center text-md">{body}</p>
+    <div class="w-full flex items-center mt-4 justify-between">
+        <p class=" text-3xl" style="font-family: Titillium Web; flex: 1;">{price}<p/>
+        <button class="boton-contratar" style="flex: none;">CONTRATAR</button>
+    </div>
+</article>
+
+
+<style>
+    .card{
+        flex: 1 0 auto;
+    }
+
+    .boton-contratar {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: -3px -3px 0px 0px black;
+  }
+
+
+.boton-contratar:hover {
+    box-shadow: -5px -5px 0px 0px #646464;
+    transition: all 0.4s ease;
+}
+
+    article {
+
+        background-color: #252525;
+        border-radius: 16px;
+        box-shadow: -10px -10px 0px -3px var(--accent);
+        display: flex;
+        flex-direction: column;
+
+        min-width: 200px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    p {
+        /* Puedes agregar estilos adicionales para el párrafo si lo necesitas */
+    }
+</style>

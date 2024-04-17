@@ -1,0 +1,42 @@
+---
+const principal = "#D08DEA";
+const accent = "#D918F9";
+
+interface Props {
+	title?: string;
+	body: string;
+
+}
+
+const { title, body } = Astro.props;
+---
+
+<article class="w-full p-5 text-black font-medium text-xl sm:w-10/12 flex flex-col justify-center">
+    <h2 class="">{title}</h2>
+    <p class="text-center">{body}</p>
+</article>
+
+<style>
+    article {
+        margin: auto;
+        background-color: var(--principal);
+        border-radius: 16px;
+        box-shadow: -10px -10px 0px -3px var(--accent);
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente el contenido */
+        align-items: center; /* Centra horizontalmente el contenido */
+        height: auto;
+        min-width: 200px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    p {
+        /* Puedes agregar estilos adicionales para el párrafo si lo necesitas */
+    }
+</style>

@@ -1,103 +1,508 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import { FibraDemo } from "../components/ui/FibraDemo";
+import Carrousel from "../components/Carrousel.astro";
+import InfoCard from "../components/InfoCard.astro";
+import PaqueteCard from "../components/PaqueteCard.astro";
+import { Image } from "astro:assets";
+import Image1 from "../assets/image1.jpg";
 ---
 
 <Layout title="Welcome to Astro.">
-	<Navbar client:load></Navbar>
+	<Navbar />
 	<main>
-		<svg
-			class="astro-a"
-			width="495"
-			height="623"
-			viewBox="0 0 495 623"
-			fill="none"
+		<div class="w-full flex justify-center">
+			<svg
+			id="Capa_3"
+			data-name="Capa 3"
 			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
-		>
-			<path
-				fill-rule="evenodd"
-				clip-rule="evenodd"
-				d="M167.19 364.254C83.4786 364.254 0 404.819 0 404.819C0 404.819 141.781 19.4876 142.087 18.7291C146.434 7.33701 153.027 0 162.289 0H332.441C341.703 0 348.574 7.33701 352.643 18.7291C352.92 19.5022 494.716 404.819 494.716 404.819C494.716 404.819 426.67 364.254 327.525 364.254L264.41 169.408C262.047 159.985 255.147 153.581 247.358 153.581C239.569 153.581 232.669 159.985 230.306 169.408L167.19 364.254ZM160.869 530.172C160.877 530.18 160.885 530.187 160.894 530.195L160.867 530.181C160.868 530.178 160.868 530.175 160.869 530.172ZM136.218 411.348C124.476 450.467 132.698 504.458 160.869 530.172C160.997 529.696 161.125 529.242 161.248 528.804C161.502 527.907 161.737 527.073 161.917 526.233C165.446 509.895 178.754 499.52 195.577 500.01C211.969 500.487 220.67 508.765 223.202 527.254C224.141 534.12 224.23 541.131 224.319 548.105C224.328 548.834 224.337 549.563 224.347 550.291C224.563 566.098 228.657 580.707 237.264 593.914C245.413 606.426 256.108 615.943 270.749 622.478C270.593 621.952 270.463 621.508 270.35 621.126C270.045 620.086 269.872 619.499 269.685 618.911C258.909 585.935 266.668 563.266 295.344 543.933C298.254 541.971 301.187 540.041 304.12 538.112C310.591 533.854 317.059 529.599 323.279 525.007C345.88 508.329 360.09 486.327 363.431 457.844C364.805 446.148 363.781 434.657 359.848 423.275C358.176 424.287 356.587 425.295 355.042 426.275C351.744 428.366 348.647 430.33 345.382 431.934C303.466 452.507 259.152 455.053 214.03 448.245C184.802 443.834 156.584 436.019 136.218 411.348Z"
-				fill="url(#paint0_linear_1805_24383)"></path>
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		
-	</main>
-</Layout>
+			viewBox="200 140 400 350" 
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+			class=" w-1/3 sm:w-1/5 md:w-1/5 max-w-52 relative top-12 sm:absolute sm:top-24 md:top-20"
+			><defs
+				><style>
+					.cls-1 {
+						fill: #d08dea;
+					}
+					
+					.cls-2 {
+						fill: #fff;
+					}
+				</style></defs
+			><circle class="cls-2" cx="321.32" cy="169.15" r="23.91"
+			></circle><circle class="cls-2" cx="446.97" cy="224.91" r="23.91"
+			></circle><circle class="cls-2" cx="358.4" cy="280.15" r="23.91"
+			></circle><circle class="cls-2" cx="234.63" cy="342.92" r="23.91"
+			></circle><circle class="cls-2" cx="332.49" cy="399" r="23.91"
+			></circle><circle class="cls-2" cx="459.72" cy="455.76" r="23.91"
+			></circle><rect
+				class="cls-1"
+				x="353.46"
+				y="154.41"
+				width="142.3"
+				height="31"
+				rx="15.5"></rect><rect
+				class="cls-1"
+				x="476.79"
+				y="209.41"
+				width="76.59"
+				height="31"
+				rx="15.5"></rect><path
+				class="cls-1"
+				d="M416.44,224.65a15.53,15.53,0,0,1-15.5,15.5H250.85a15.21,15.21,0,0,1-2.35-.18h-6.43A12.12,12.12,0,0,0,230,252.09v.6a12.12,12.12,0,0,0,12.11,12.12h70a15.5,15.5,0,0,1,0,31H248.45a43.33,43.33,0,1,1,0-86.66c.48,0,1,0,1.45,0,.31,0,.63,0,.95,0H400.94A15.54,15.54,0,0,1,416.44,224.65Z"
+			></path><rect
+				class="cls-1"
+				x="227.38"
+				y="384.5"
+				width="76.59"
+				height="31"
+				rx="15.5"></rect><rect
+				class="cls-1"
+				x="284.79"
+				y="439.26"
+				width="141.85"
+				height="31"
+				rx="15.5"></rect><rect
+				class="cls-1"
+				x="388.79"
+				y="264.65"
+				width="188.09"
+				height="31"
+				rx="15.5"></rect><path
+				class="cls-1"
+				d="M592.82,370.75a43.33,43.33,0,0,1-43.33,43.33H380.15a15.5,15.5,0,0,1,0-31H548.9a15.45,15.45,0,0,1,2.27.17h4.7A12.12,12.12,0,0,0,568,371.14v-.6a12.12,12.12,0,0,0-12.11-12.12H281.18a15.5,15.5,0,0,1,0-31H549.49A43.33,43.33,0,0,1,592.82,370.75Z"
+			></svg
+		>
+		</div>
+		
+
+		<FibraDemo client:load />
+		<h1 class="text-center text-3xl sm:text-7xl">
+			INTERNET DE ALTA VELOCIDAD
+		</h1>
+		<h5 class="text-center">Aguascalientes</h5>
+		<h4 class="text-center text-xl mt-5 mb-5" style="color:#D918F9;">
+			Fibra Optica
+		</h4>
+		<Carrousel client:load />
+	</main>
+	<!-- 		<div class="svg-container">
+			<svg xmlns="http://www.w3.org/2000/svg" width="80" height="30" viewBox="0 0 106 57" fill="none">
+				<path d="M101.417 4L52.7083 52.7083L4 4" stroke="#D08DEA" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div> -->
+
+	<section id="acerca de nosotros" class="">
+		<h2 class="text-center text-xl mt-6 mb-2 text-animation">
+			ACERCA DE NOSOTROS
+		</h2>
+
+		<div class="w-full grid gap-8 p-5 mt-10 md:grid-cols-2 md:items-center">
+			<div class="">
+				<InfoCard
+					body="Somos una empresa que lleva internet ilimitado a aquellos lugares donde otras compañías no llegan.Con nuestra red de fibra óptica, disfruta de velocidades ultrarrápidas, conexión estable y baja latencia. Experimenta lo mejor en rendimiento y fiabilidad para tus necesidades en línea."
+				/>
+			</div>
+			<div class="w-11/12 m-auto max-w-sm 2xl:max-w-md">
+				<Image src={Image1} alt="hsda" class="image-nosotros" />
+			</div>
+		</div>
+	</section>
+	<section id="Paquetes" class="">
+		<h2 class="text-center mt-6 text-xl mb-2 text-animation">PAQUETES</h2>
+
+		<div
+			class="mx-24 hidden p-5 mt-10 md:grid md:grid-cols-2 md:mx-6 xl:grid-cols-4 items-stretch gap-10"
+		>
+			<PaqueteCard
+				title="30 Megas Plan básico"
+				phrase="Conexión estable y rápida para tus necesidades diarias en línea."
+				body="Perfecto para navegar, enviar correos y realizar videollamadas en hasta 3 dispositivos simultáneos."
+				price="$300"
+			/>
+
+			<PaqueteCard
+				title="70 Megas Plan Intermedio"
+				phrase="Potencia tu experiencia en línea con alta velocidad y fiabilidad."
+				body="Ideal para streaming HD, descargas rápidas y gaming en hasta 5 dispositivos a la vez."
+				price="$350"
+			/>
+
+			<PaqueteCard
+				title="100 Megas Plan Pro"
+				phrase="Velocidad ultrarrápida para múltiples dispositivos y actividades intensivas en línea."
+				body="Recomendado para hogares con hasta 7 dispositivos, ofreciendo streaming en 4K y descargas rápidas."
+				price="$450"
+			/>
+
+			<PaqueteCard
+				title="200 Megas Plan Master Pro"
+				phrase="Máxima velocidad y rendimiento para las demandas más exigentes de conectividad."
+				body="Diseñado para satisfacer las demandas más exigentes de conectividad, perfecto para familias grandes, home office, gaming de alto rendimiento y más."
+				price="$550"
+			/>
+		</div>
+		<div class="flex items-center justify-between mt-10 mx-3 md:hidden">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="17"
+				height="33"
+				viewBox="0 0 17 33"
+				fill="none"
+			>
+				<path
+					d="M15.875 31.375L1 16.5L15.875 1.625"
+					stroke="white"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path>
+			</svg>
+			<p class="text-xl">Desliza</p>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="18"
+				height="34"
+				viewBox="0 0 18 34"
+				fill="none"
+			>
+				<path
+					d="M1.5 1.83325L16.6667 16.9999L1.5 32.1666"
+					stroke="white"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path>
+			</svg>
+		</div>
+
+		<div
+			class="mx-5 flex flex-nowrap overflow-scroll p-5 md:hidden items-stretch gap-10"
+		>
+			<PaqueteCard
+				title="70 Megas Plan Intermedio"
+				phrase="Potencia tu experiencia en línea con alta velocidad y fiabilidad."
+				body="Ideal para streaming HD, descargas rápidas y gaming en hasta 5 dispositivos a la vez."
+				price="$350"
+			/>
+
+			<PaqueteCard
+				title="30 Megas Plan básico"
+				phrase="Conexión estable y rápida para tus necesidades diarias en línea."
+				body="Perfecto para navegar, enviar correos y realizar videollamadas en hasta 3 dispositivos simultáneos."
+				price="$300"
+			/>
+
+			<PaqueteCard
+				title="100 Megas Plan Pro"
+				phrase="Velocidad ultrarrápida para múltiples dispositivos y actividades intensivas en línea."
+				body="Recomendado para hogares con hasta 7 dispositivos, ofreciendo streaming en 4K y descargas rápidas."
+				price="$450"
+			/>
+
+			<PaqueteCard
+				title="200 Megas Plan Master Pro"
+				phrase="Máxima velocidad y rendimiento para las demandas más exigentes de conectividad."
+				body="Diseñado para satisfacer las demandas más exigentes de conectividad, perfecto para familias grandes, home office, gaming de alto rendimiento y más."
+				price="$550"
+			/>
+		</div>
+		<div
+			class="flex flex-col md:flex-row mx-8 md:mx-36 mt-6 gap-6 items-center"
+		>
+			<button class="boton-contratar" style="flex: none;"
+				>INTERNET PARA EMPRESAS</button
+			>
+			<p class="text-xl font mb-6" style="color: #d08dea">
+				Conectividad empresarial confiable y segura para impulsar tu
+				negocio. Desde conexiones de alta velocidad hasta soluciones de
+				red robustas, estamos aquí para potenciar tu éxito comercial.
+			</p>
+		</div>
+	</section>
+
+	<section id="encuentranos">
+		<h2 class="text-center text-xl my-6 text-animation">Encuentranos</h2>
+		<div
+			class="flex flex-col px-10 md:px-24 md:flex-row justify-between items-center"
+		>
+			<div class="flex flex-col">
+				<div
+					class="flex flex-row items-center justify-center md:justify-start gap-6 m-5"
+				>
+					<svg
+						width="44"
+						height="44"
+						viewBox="0 0 512 512"
+						xmlns="http://www.w3.org/2000/svg"
+						style="fill: #AD2BDF"
+						><path
+							d="M480,257.35c0-123.7-100.3-224-224-224s-224,100.3-224,224c0,111.8,81.9,204.47,189,221.29V322.12H164.11V257.35H221V208c0-56.13,33.45-87.16,84.61-87.16,24.51,0,50.15,4.38,50.15,4.38v55.13H327.5c-27.81,0-36.51,17.26-36.51,35v42h62.12l-9.92,64.77H291V478.66C398.1,461.85,480,369.18,480,257.35Z"
+							fill-rule="evenodd"></path></svg
+					>
+					<svg
+						width="44"
+						height="44"
+						style="fill: #AD2BDF"
+						viewBox="0 0 56.7 56.7"
+						enable-background="new 0 0 56.7 56.7"
+					>
+						<g>
+							<path
+								d="M28.2,16.7c-7,0-12.8,5.7-12.8,12.8s5.7,12.8,12.8,12.8S41,36.5,41,29.5S35.2,16.7,28.2,16.7z M28.2,37.7
+		c-4.5,0-8.2-3.7-8.2-8.2s3.7-8.2,8.2-8.2s8.2,3.7,8.2,8.2S32.7,37.7,28.2,37.7z"
+							></path>
+							<circle cx="41.5" cy="16.4" r="2.9"></circle>
+							<path
+								d="M49,8.9c-2.6-2.7-6.3-4.1-10.5-4.1H17.9c-8.7,0-14.5,5.8-14.5,14.5v20.5c0,4.3,1.4,8,4.2,10.7c2.7,2.6,6.3,3.9,10.4,3.9
+		h20.4c4.3,0,7.9-1.4,10.5-3.9c2.7-2.6,4.1-6.3,4.1-10.6V19.3C53,15.1,51.6,11.5,49,8.9z M48.6,39.9c0,3.1-1.1,5.6-2.9,7.3
+		s-4.3,2.6-7.3,2.6H18c-3,0-5.5-0.9-7.3-2.6C8.9,45.4,8,42.9,8,39.8V19.3c0-3,0.9-5.5,2.7-7.3c1.7-1.7,4.3-2.6,7.3-2.6h20.6
+		c3,0,5.5,0.9,7.3,2.7c1.7,1.8,2.7,4.3,2.7,7.2V39.9L48.6,39.9z"
+							></path>
+						</g>
+					</svg>
+					<span class="text-2xl">Onfiber</span>
+				</div>
+				<div
+					class="flex flex-row items-center justify-center md:justify-start gap-6 m-5"
+				>
+					<svg
+						height="56.693px"
+						id="Layer_1"
+						style="enable-background:new 0 0 56.693 56.693;"
+						version="1.1"
+						viewBox="0 0 56.693 56.693"
+						width="44"
+						height="44"
+						class="fill-blue-500"
+						xml:space="preserve"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						><style type="text/css">
+							.st0 {
+								fill-rule: evenodd;
+								clip-rule: evenodd;
+							}
+						</style><g
+							><path
+								class="st0"
+								width="44"
+								height="44"
+								style="fill: #AD2BDF"
+								d="M46.3802,10.7138c-4.6512-4.6565-10.8365-7.222-17.4266-7.2247c-13.5785,0-24.63,11.0506-24.6353,24.6333   c-0.0019,4.342,1.1325,8.58,3.2884,12.3159l-3.495,12.7657l13.0595-3.4257c3.5982,1.9626,7.6495,2.9971,11.7726,2.9985h0.01   c0.0008,0-0.0006,0,0.0002,0c13.5771,0,24.6293-11.0517,24.635-24.6347C53.5914,21.5595,51.0313,15.3701,46.3802,10.7138z    M28.9537,48.6163h-0.0083c-3.674-0.0014-7.2777-0.9886-10.4215-2.8541l-0.7476-0.4437l-7.7497,2.0328l2.0686-7.5558   l-0.4869-0.7748c-2.0496-3.26-3.1321-7.028-3.1305-10.8969c0.0044-11.2894,9.19-20.474,20.4842-20.474   c5.469,0.0017,10.6101,2.1344,14.476,6.0047c3.8658,3.8703,5.9936,9.0148,5.9914,14.4859   C49.4248,39.4307,40.2395,48.6163,28.9537,48.6163z"
+							></path><path
+								style="fill: #AD2BDF"
+								class="st0"
+								d="M40.1851,33.281c-0.6155-0.3081-3.6419-1.797-4.2061-2.0026c-0.5642-0.2054-0.9746-0.3081-1.3849,0.3081   c-0.4103,0.6161-1.59,2.0027-1.9491,2.4136c-0.359,0.4106-0.7182,0.4623-1.3336,0.1539c-0.6155-0.3081-2.5989-0.958-4.95-3.0551   c-1.83-1.6323-3.0653-3.6479-3.4245-4.2643c-0.359-0.6161-0.0382-0.9492,0.27-1.2562c0.2769-0.2759,0.6156-0.7189,0.9234-1.0784   c0.3077-0.3593,0.4103-0.6163,0.6155-1.0268c0.2052-0.4109,0.1027-0.7704-0.0513-1.0784   c-0.1539-0.3081-1.3849-3.3379-1.8978-4.5706c-0.4998-1.2001-1.0072-1.0375-1.3851-1.0566   c-0.3585-0.0179-0.7694-0.0216-1.1797-0.0216s-1.0773,0.1541-1.6414,0.7702c-0.5642,0.6163-2.1545,2.1056-2.1545,5.1351   c0,3.0299,2.2057,5.9569,2.5135,6.3676c0.3077,0.411,4.3405,6.6282,10.5153,9.2945c1.4686,0.6343,2.6152,1.013,3.5091,1.2966   c1.4746,0.4686,2.8165,0.4024,3.8771,0.2439c1.1827-0.1767,3.6419-1.489,4.1548-2.9267c0.513-1.438,0.513-2.6706,0.359-2.9272   C41.211,33.7433,40.8006,33.5892,40.1851,33.281z"
+							></path></g
+						></svg
+					>
+					<span class="text-2xl">4493275135</span>
+				</div>
+				<div
+					class="flex flex-row items-center justify-center md:justify-start gap-6 m-5"
+				>
+					<svg
+						viewBox="0 0 48 48"
+						width="44"
+						height="44"
+						style="fill: #AD2BDF"
+						xmlns="http://www.w3.org/2000/svg"
+						><path d="M0 0h48v48h-48z" fill="none"></path><path
+							d="M13.25 21.59c2.88 5.66 7.51 10.29 13.18 13.17l4.4-4.41c.55-.55 1.34-.71 2.03-.49 2.24.74 4.65 1.14 7.14 1.14 1.11 0 2 .89 2 2v7c0 1.11-.89 2-2 2-18.78 0-34-15.22-34-34 0-1.11.9-2 2-2h7c1.11 0 2 .89 2 2 0 2.49.4 4.9 1.14 7.14.22.69.06 1.48-.49 2.03l-4.4 4.42z"
+						></path></svg
+					>
+					<span class="text-2xl">4493880998</span>
+				</div>
+				<div
+					class="flex flex-row items-center justify-center md:justify-start gap-6 m-5"
+				>
+					<svg
+						enable-background="new 0 0 56.693 56.693"
+						height="56.693px"
+						id="Layer_1"
+						version="1.1"
+						viewBox="0 0 56.693 56.693"
+						width="44"
+						height="44"
+						style="fill: #AD2BDF"
+						width="56.693px"
+						xml:space="preserve"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						><g
+							><path
+								d="M30.071,27.101v-0.077c-0.016,0.026-0.033,0.052-0.05,0.077H30.071z"
+							></path><path
+								d="M49.265,4.667H7.145c-2.016,0-3.651,1.596-3.651,3.563v42.613c0,1.966,1.635,3.562,3.651,3.562h42.12   c2.019,0,3.654-1.597,3.654-3.562V8.23C52.919,6.262,51.283,4.667,49.265,4.667z M18.475,46.304h-7.465V23.845h7.465V46.304z    M14.743,20.777h-0.05c-2.504,0-4.124-1.725-4.124-3.88c0-2.203,1.67-3.88,4.223-3.88c2.554,0,4.125,1.677,4.175,3.88   C18.967,19.052,17.345,20.777,14.743,20.777z M45.394,46.304h-7.465V34.286c0-3.018-1.08-5.078-3.781-5.078   c-2.062,0-3.29,1.389-3.831,2.731c-0.197,0.479-0.245,1.149-0.245,1.821v12.543h-7.465c0,0,0.098-20.354,0-22.459h7.465v3.179   c0.992-1.53,2.766-3.709,6.729-3.709c4.911,0,8.594,3.211,8.594,10.11V46.304z"
+							></path></g
+						></svg
+					>
+					<span class="text-2xl">OnFiber SA DE CV</span>
+				</div>
+			</div>
+			<div class="w-full max-w-2xl h-auto max-h-72 sm:max-h-96">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d654.6059896117154!2d-102.30605244286957!3d21.857123975636625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee7f00d90f05%3A0xb7f915c9cc14793f!2sOnFiber!5e0!3m2!1ses-419!2smx!4v1713227013277!5m2!1ses-419!2smx"
+					class="w-full h-80 max-h-72"
+					style="border:0;"
+					allowfullscreen=""
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+	</section>
+		<div
+			class="flex flex-col px-10 md:px-24 md:flex-row justify-between items-center"
+		>
+			<div class="flex flex-col py-10 gap-7">
+				<a href="">Constancia de coberturra</a>
+				<a href="">Autorización</a>
+				<a href="">Aviso de privacidad</a>
+				<a href="">Código de practica comercial</a>
+				<a href="">Inscripción en el registro publico de concesiones</a>
+			</div>
+			<div>
+				<div class="flex flex-row items-center gap-7 justify-center md:justify-end py-4">
+					<span class=" text-2xl">ONFIBER SA DE CV</span>
+					<svg
+			id="Capa_3"
+			data-name="Capa 3"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="200 140 400 350" 
+
+			class=" w-1/4 sm:w-1/5 md:w-1/5 "
+			><defs
+				><style>
+					.cls-1 {
+						fill: #d08dea;
+					}
+					
+					.cls-2 {
+						fill: #fff;
+					}
+				</style></defs
+			><circle class="cls-2" cx="321.32" cy="169.15" r="23.91"
+			></circle><circle class="cls-2" cx="446.97" cy="224.91" r="23.91"
+			></circle><circle class="cls-2" cx="358.4" cy="280.15" r="23.91"
+			></circle><circle class="cls-2" cx="234.63" cy="342.92" r="23.91"
+			></circle><circle class="cls-2" cx="332.49" cy="399" r="23.91"
+			></circle><circle class="cls-2" cx="459.72" cy="455.76" r="23.91"
+			></circle><rect
+				class="cls-1"
+				x="353.46"
+				y="154.41"
+				width="142.3"
+				height="31"
+				rx="15.5"></rect><rect
+				class="cls-1"
+				x="476.79"
+				y="209.41"
+				width="76.59"
+				height="31"
+				rx="15.5"></rect><path
+				class="cls-1"
+				d="M416.44,224.65a15.53,15.53,0,0,1-15.5,15.5H250.85a15.21,15.21,0,0,1-2.35-.18h-6.43A12.12,12.12,0,0,0,230,252.09v.6a12.12,12.12,0,0,0,12.11,12.12h70a15.5,15.5,0,0,1,0,31H248.45a43.33,43.33,0,1,1,0-86.66c.48,0,1,0,1.45,0,.31,0,.63,0,.95,0H400.94A15.54,15.54,0,0,1,416.44,224.65Z"
+			></path><rect
+				class="cls-1"
+				x="227.38"
+				y="384.5"
+				width="76.59"
+				height="31"
+				rx="15.5"></rect><rect
+				class="cls-1"
+				x="284.79"
+				y="439.26"
+				width="141.85"
+				height="31"
+				rx="15.5"></rect><rect
+				class="cls-1"
+				x="388.79"
+				y="264.65"
+				width="188.09"
+				height="31"
+				rx="15.5"></rect><path
+				class="cls-1"
+				d="M592.82,370.75a43.33,43.33,0,0,1-43.33,43.33H380.15a15.5,15.5,0,0,1,0-31H548.9a15.45,15.45,0,0,1,2.27.17h4.7A12.12,12.12,0,0,0,568,371.14v-.6a12.12,12.12,0,0,0-12.11-12.12H281.18a15.5,15.5,0,0,1,0-31H549.49A43.33,43.33,0,0,1,592.82,370.75Z"
+			></svg
+		>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<style>
+		.boton-contratar {
+			background-color: white;
+			border: 2px solid black;
+			border-radius: 5px;
+			color: black;
+			font-weight: bold;
+			padding: 10px 20px;
+			text-align: center;
+			font-size: 14px;
+			cursor: pointer;
+			box-shadow: -3px -3px 0px 0px black;
+		}
+		.boton-contratar:hover {
+			box-shadow: -3px -3px 0px 0px #646464;
+			transition: all 0.4s ease;
+		}
+		.car h1 {
+			font-weight: normal;
+			line-height: 1;
+		}
+		.text-gradient {
+			background-image: var(--accent-gradient);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-size: 400%;
+			background-position: 0%;
+		}
+		.instructions {
+			margin-bottom: 2rem;
+			border: 1px solid rgba(var(--accent-light), 25%);
+			background: linear-gradient(
+				rgba(var(--accent-dark), 66%),
+				rgba(var(--accent-dark), 33%)
+			);
+			padding: 1.5rem;
+			border-radius: 8px;
+		}
+		.instructions code {
+			font-size: 0.8em;
+			font-weight: bold;
+			background: rgba(var(--accent-light), 12%);
+			color: rgb(var(--accent-light));
+			border-radius: 4px;
+			padding: 0.3em 0.4em;
+		}
+		.instructions strong {
+			color: rgb(var(--accent-light));
+		}
+		.link-card-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+			gap: 2rem;
+			padding: 0;
+		}
+		.svg-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.text-animation {
+			font-size: 50px;
+			animation: textAnimation 600ms infinite alternate;
+		}
+
+		@keyframes textAnimation {
+			0% {
+				font-size: 2rem;
+			}
+			100% {
+				font-size: 2.05rem;
+			}
+		}
+	</style>
+</Layout>

@@ -6,6 +6,8 @@ import '@fontsource/chakra-petch';
 import '@fontsource/titillium-web';
 const { title } = Astro.props;
 import { FibraDemo } from '../components/ui/FibraDemo';
+import { Image } from 'astro:assets';
+import srcImage from "../assets/logo.png";
 ---
 
 <!doctype html>
@@ -21,12 +23,14 @@ import { FibraDemo } from '../components/ui/FibraDemo';
 	<body>
 		
 		<slot />
-		<FibraDemo client:load/>
+
 	</body>
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
+		color-scheme: dark dark;
+		--principal: #d08dea;
+		--accent: #D918F9;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
 		--accent-gradient: linear-gradient(
@@ -36,9 +40,10 @@ import { FibraDemo } from '../components/ui/FibraDemo';
 			white 60%
 		);
 	}
+	
 	html {
 		font-family: 'Chakra Petch', 'Titillium Web', sans-serif;
-		background: #000000;
+		background: #000;
 		background-size: 224px;
 	}
 	code {

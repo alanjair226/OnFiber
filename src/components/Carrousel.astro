@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets'
+import banner1 from '../assets/banner1.jpg'
+import banner2 from '../assets/banner2.jpg'
+import banner3 from '../assets/banner3.jpg'
+
+
+---
+
+<div class="carrousel w-full p-3 sm:w-10/12">
+    <div class="grande">
+        <Image src={banner1} alt="Banner 1" class="img" loading="eager"/> 
+        <Image src={banner2} alt="Banner 2" class="img" loading="eager"/> 
+        <Image src={banner3} alt="Banner 3" class="img" loading="eager"/> 
+    </div>
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.img');
+const totalSlides = slides.length;
+const intervalTime = 5000; // 5 segundos
+let slideInterval: any;
+
+// Función para pasar a la siguiente diapositiva
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlide();
+}
+
+// Función para actualizar la diapositiva actual
+function updateSlide() {
+    const offset = -currentSlide * 33.33;
+    (document.querySelector('.grande') as HTMLElement).style.transform = `translateX(${offset}%)`;
+}
+
+// Iniciar el carrusel
+function startCarousel() {
+    slideInterval = setInterval(nextSlide, intervalTime);
+}
+
+// Detener el carrusel
+function stopCarousel() {
+    clearInterval(slideInterval);
+}
+
+// Event listener para cada punto
+document.querySelectorAll('.punto').forEach((punto, index) => {
+    punto.addEventListener('click', () => {
+        currentSlide = index;
+        updateSlide();
+    });
+});
+
+// Iniciar carrusel
+startCarousel();
+</script>
+
+<style>
+.carrousel {
+    margin: auto;
+
+    overflow: hidden;
+
+}
+
+.grande {
+    width: 300%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.img {
+    width: calc(100%/3);
+    height: auto; /* Esto mantendrá la proporción de aspecto de las imágenes */
+    
+}
+</style>
