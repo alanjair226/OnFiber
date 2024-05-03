@@ -6,19 +6,19 @@ import { Image } from "astro:assets";
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <!-- Texto ONFIBER -->
-            <h4 class="text-3xl">ONFIBER</h4>
+            <h4 class="text-4xl"><a href="/">ONFIBER</a></h4>
             <!-- Enlaces del menú -->
             <div class="hidden sm:flex">
                 <div class="flex space-x-4">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a
-                        href="#"
-                        class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                        href="/cobertura"
+                        class="navlink hover:text-white rounded-md px-3 py-2 text-lg font-medium"
                         >COBERTURA</a
                     >
                     <a
-                        href="#"
-                        class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                        href="/guiaClientes"
+                        class="navlink hover:text-white rounded-md px-3 py-2 text-lg font-medium"
                         >GUÍA PARA CLIENTES</a
                     >
                 </div>
@@ -33,7 +33,6 @@ import { Image } from "astro:assets";
                     class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                     aria-controls="mobile-menu"
                     aria-expanded="false"
-                    onclick="toggleMenu()"
                 >
                     <svg
                         class="block h-6 w-6"
@@ -68,31 +67,47 @@ import { Image } from "astro:assets";
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div id="mobile-menu" class="hidden sm:hidden opacity-0 transition-opacity duration-300 ease-in-out">
-        <div class="flex flex-col  space-y-1 px-2 pb-3 pt-2">
+    <div
+        id="mobile-menu"
+        class="hidden sm:hidden opacity-0 transition-opacity duration-300 ease-in-out"
+    >
+        <div class="flex flex-col space-y-1 px-2 pb-3 pt-2">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a
-                href="#"
-                class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                href="/cobertura"
+                class="navlink hover:text-white rounded-md px-3 py-2 text-md font-medium"
                 aria-current="page">COBERTURA</a
             >
             <a
-                href="#"
-                class="hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                href="/guiaClientes"
+                class="navlink hover:text-white rounded-md px-3 py-2 text-md font-medium"
                 >GUÍA PARA CLIENTES</a
             >
         </div>
     </div>
 </nav>
+<style>
+    .navlink{
+        transition: 400ms;
+    }
+    .navlink:hover{
+        background-color: #35073d;
+    }
+</style>
 
 <script>
-    const mobileMenuButton = document.getElementById(
-        "mobile-menu-button",
-    ) as HTMLButtonElement;
-    const mobileMenu = document.getElementById("mobile-menu") as HTMLElement;
+    document.addEventListener("astro:page-load", () => {
+        const mobileMenuButton = document.getElementById(
+            "mobile-menu-button",
+        ) as HTMLButtonElement;
+        const mobileMenu = document.getElementById(
+            "mobile-menu",
+        ) as HTMLElement;
 
-    mobileMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        mobileMenu.classList.toggle("opacity-100");
+        mobileMenuButton.addEventListener("click", () => {
+            console.log("Botón de menú móvil clicado");
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("opacity-100");
+        });
     });
 </script>

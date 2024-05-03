@@ -5,9 +5,10 @@ interface Props {
 import '@fontsource/chakra-petch';
 import '@fontsource/titillium-web';
 const { title } = Astro.props;
-import { FibraDemo } from '../components/ui/FibraDemo';
-import { Image } from 'astro:assets';
-import srcImage from "../assets/logo.png";
+import { ViewTransitions } from 'astro:transitions';
+
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -19,12 +20,15 @@ import srcImage from "../assets/logo.png";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions/>
 	</head>
+	<Navbar/>
 	<body>
 		
 		<slot />
 
 	</body>
+	<Footer/>
 </html>
 <style is:global>
 	:root {

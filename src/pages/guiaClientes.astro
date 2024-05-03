@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GuiaCard from "../components/GuiaCard.astro";
+---
+
+<Layout title="Guía para clientes">
+  <h1 class="text-center text-3xl sm:text-7xl my-4" style="color:#D08DEA">¡Gracias por elegir OnFiber!</h1>
+  <div class="p-5 flex gap-4 flex-wrap w-full justify-around">
+
+    <GuiaCard
+      title="Pago por Oxxo"
+      descarga="../../public/docs/manual.pdf"
+    >
+      <p>
+        Para pagar en Oxxo, necesitas acceder al portal de Onfiber. Cuando contrataste el servicio, recibiste un usuario y contraseña por SMS al número que registraste. Estos son los datos que necesitas para iniciar sesión en el portal. </p>
+      <a class="p-2" href="https://onfiber.mikrowisp.net/cliente/login" onclick="return onLinkClick(this, event);" target="_blank">PORTAL DE CLIENTES</a>
+      <p>Si no tienes esos datos a mano, puedes comunicarte por WhatsApp al siguiente número:  <a href="https://wa.link/jh5htf" target="_blank">4493275135</a>. Ellos te proporcionarán la información necesaria para acceder al portal de Onfiber.</p>
+    </GuiaCard>
+
+    <GuiaCard
+    title="Pago por Openpay"
+    descarga="../../public/docs/Manual de pago Openpay.pdf"
+  >
+    <p>
+      Para pagar por este metodo debes ingresar al portal de clientes con el usuario y contraseña que te llegó via SMS cuando contrataste el servicio. </p>
+    <a class="p-2" href="https://onfiber.mikrowisp.net/cliente/login" onclick="return onLinkClick(this, event);" target="_blank">PORTAL DE CLIENTES</a>
+    <p>Si no tienes tus datos de acceso al portal, puedes comunicarte por WhatsApp al siguiente número:  <a href="https://wa.link/jh5htf" target="_blank">4493275135</a>. Ellos te proporcionarán la información necesaria para acceder al portal de Onfiber.</p>
+  </GuiaCard>
+
+  <GuiaCard
+    title="Puntos físicos de pago"
+  >
+  <p>Si deseas pagar físicamente, puedes comunicarte por WhatsApp al siguiente número:  <a href="https://wa.link/jh5htf" target="_blank">4493275135</a>. Ellos te proporcionarán la información sobre el punto más cercano de tu domicilio(en caso de haber).</p>  
+</GuiaCard>
+
+<GuiaCard
+    title="¿Cómo ponerme en contacto?"
+  >
+  <p>Los unicos números para dar soporte y resolver dudas son los siguientes:</p>  
+  <p>WhatsApp: <a href="https://wa.link/jh5htf" target="_blank">4493275135</a></p>
+  <p>Llamada telefonica: <a href="tel:4493880998">4493880998</a> </p>
+  <p class=" font-bold" style="color:#D08DEA;">FAVOR DE NO COMUNICARSE CON SU INSTALADOR O VENDEDOR.</p>
+</GuiaCard>
+
+<GuiaCard
+    title="Cuidados y recomendaciones con el modem"
+  >
+  <p>El modem es un dispositivo que se utiliza para conectarse a internet. Funciona como un puente entre la señal de internet que llega a tu domicilio y tus dispositivos electrónicos (computadora, teléfono, tablet, etc.).</p>  
+  <p>El rango de alcance del modem es de aproximadamente 5 metros a la redonda para que sea eficaz.</p>
+  <p>Si tu modem tiene la característica de conexión de doble banda (2.4 GHz y 5 GHz), se recomienda conectarse a la red de 5 GHz para obtener una conexión más rápida y estable.</p>
+  <p>Es importante mantener el modem limpio y libre de plagas de insectos, ya que pueden afectar su funcionamiento. También se recomienda no manipularlo demasiado, ya que esto podría dañar el cableado interno y afectar su desempeño.</p>
+</GuiaCard>
+    
+  </div>
+</Layout>
+
+<style>
+  a{
+    text-decoration:underline;
+    color: #D918F9;
+  }
+  a:hover{
+    color: #fff;
+  }
+  
+</style>

@@ -7,28 +7,32 @@ import InfoCard from "../components/InfoCard.astro";
 import PaqueteCard from "../components/PaqueteCard.astro";
 import { Image } from "astro:assets";
 import Image1 from "../assets/image1.jpg";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<Navbar />
+<Layout title="OnFiber">
+	
 	<main>
 		<div class="w-full flex justify-center">
 			<svg
-			id="Capa_3"
-			data-name="Capa 3"
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="200 140 400 350" 
+			id="logo"
 
-			class=" w-1/3 sm:w-1/5 md:w-1/5 max-w-52 relative top-12 sm:absolute sm:top-24 md:top-20"
+			viewBox="180 90 450 400" 
+
+			class=" w-1/3 sm:w-1/5 md:w-1/5 max-w-60 relative top-12 sm:absolute sm:top-24 md:top-20"
 			><defs
 				><style>
 					.cls-1 {
 						fill: #d08dea;
+						filter: drop-shadow(0em 0em .5em #AD2BDF);
 					}
 					
 					.cls-2 {
 						fill: #fff;
+						filter: drop-shadow(0em 0em .5em #AD2BDF);
 					}
+					
+					
 				</style></defs
 			><circle class="cls-2" cx="321.32" cy="169.15" r="23.91"
 			></circle><circle class="cls-2" cx="446.97" cy="224.91" r="23.91"
@@ -81,7 +85,7 @@ import Image1 from "../assets/image1.jpg";
 		<h1 class="text-center text-3xl sm:text-7xl">
 			INTERNET DE ALTA VELOCIDAD
 		</h1>
-		<h5 class="text-center">Aguascalientes</h5>
+		<h5 class="text-center text-lg">Aguascalientes</h5>
 		<h4 class="text-center text-xl mt-5 mb-5" style="color:#D918F9;">
 			Fibra Optica
 		</h4>
@@ -92,6 +96,213 @@ import Image1 from "../assets/image1.jpg";
 				<path d="M101.417 4L52.7083 52.7083L4 4" stroke="#D08DEA" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		</div> -->
+		<section id="Paquetes" class="mt-8">
+			<h2 class="text-center mt-6 text-xl mb-2 text-animation">PAQUETES</h2>
+	
+			<div
+				class="mx-24 hidden p-5 mt-10 md:grid md:grid-cols-2 md:mx-6 xl:grid-cols-4 items-stretch gap-10"
+			>
+				<PaqueteCard
+					title="30 Megas Plan básico"
+					phrase="Conexión estable y rápida para tus necesidades diarias en línea."
+					body="Perfecto para navegar, enviar correos y realizar videollamadas en hasta 3 dispositivos simultáneos."
+					price="$300"
+					
+				/>
+	
+				<PaqueteCard
+					title="70 Megas Plan Intermedio"
+					phrase="Potencia tu experiencia en línea con alta velocidad y fiabilidad."
+					body="Ideal para streaming HD, descargas rápidas y gaming en hasta 5 dispositivos a la vez."
+					price="$350"
+				/>
+	
+				<PaqueteCard
+					title="100 Megas Plan Pro"
+					phrase="Velocidad ultrarrápida para múltiples dispositivos y actividades intensivas en línea."
+					body="Recomendado para hogares con hasta 7 dispositivos, ofreciendo streaming en 4K y descargas rápidas."
+					price="$450"
+					
+				/>
+	
+				<PaqueteCard
+					title="200 Megas Plan Master Pro"
+					phrase="Máxima velocidad y rendimiento para las demandas más exigentes de conectividad."
+					body="Diseñado para satisfacer las demandas más exigentes de conectividad, perfecto para familias grandes, home office, gaming de alto rendimiento y más."
+					price="$550"
+					
+				/>
+			</div>
+			<div class="flex items-center justify-between mt-10 mx-3 md:hidden">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="17"
+					height="33"
+					viewBox="0 0 17 33"
+					fill="none"
+				>
+					<path
+						d="M15.875 31.375L1 16.5L15.875 1.625"
+						stroke="white"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+				<p class="text-xl">Desliza</p>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="18"
+					height="34"
+					viewBox="0 0 18 34"
+					fill="none"
+				>
+					<path
+						d="M1.5 1.83325L16.6667 16.9999L1.5 32.1666"
+						stroke="white"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</div>
+	
+			<div
+				class="mx-5 flex flex-nowrap overflow-scroll p-5 md:hidden items-stretch gap-10"
+			>
+				<PaqueteCard
+					title="70 Megas Plan Intermedio"
+					phrase="Potencia tu experiencia en línea con alta velocidad y fiabilidad."
+					body="Ideal para streaming HD, descargas rápidas y gaming en hasta 5 dispositivos a la vez."
+					price="$350"
+					
+				/>
+	
+				<PaqueteCard
+					title="30 Megas Plan básico"
+					phrase="Conexión estable y rápida para tus necesidades diarias en línea."
+					body="Perfecto para navegar, enviar correos y realizar videollamadas en hasta 3 dispositivos simultáneos."
+					price="$300"
+					
+				/>
+	
+				<PaqueteCard
+					title="100 Megas Plan Pro"
+					phrase="Velocidad ultrarrápida para múltiples dispositivos y actividades intensivas en línea."
+					body="Recomendado para hogares con hasta 7 dispositivos, ofreciendo streaming en 4K y descargas rápidas."
+					price="$450"
+					
+				/>
+	
+				<PaqueteCard
+					title="200 Megas Plan Master Pro"
+					phrase="Máxima velocidad y rendimiento para las demandas más exigentes de conectividad."
+					body="Diseñado para satisfacer las demandas más exigentes de conectividad, perfecto para familias grandes, home office, gaming de alto rendimiento y más."
+					price="$550"
+					
+				/>
+			</div>
+			<div
+				class="flex flex-col md:flex-row mx-8 md:mx-36 mt-6 gap-6 items-center"
+			>
+				<button class="contratar-empresarial" style="flex: none;"
+					>INTERNET PARA EMPRESAS</button
+				>
+				<p class="text-xl font mb-6" style="color: #d08dea">
+					Conectividad empresarial confiable y segura para impulsar tu
+					negocio. Desde conexiones de alta velocidad hasta soluciones de
+					red robustas, estamos aquí para potenciar tu éxito comercial.
+				</p>
+			</div>
+			<div id="modal-contratar" class=" text-slate-950 hidden w-full fixed top-0 bottom-0 inset-0 m-0 z-30 transition ease-in-out " id="modal-1" style="background-color: hsla(0, 0%, 0%, 0.705);">
+				<button class="cerrar text-white absolute top-5 right-5" id="cerrar-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-16 h-16">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+				</svg>
+				</button>
+				<div class=" w-5/6 sm:w-3/4 md:w-1/2 bg-white z-10 relative m-auto flex gap-8 flex-col justify-center items-center duration-1000 rounded-lg p-4">
+					<h3 class=" text-4xl font-medium" >Contactanos</h3>
+					<p class=" text-xl">WhatsApp: <a  href="https://wa.link/jh5htf" target="_blank" style="color: #D918F9;text-decoration:underline;">4493275135</a></p>
+			<p class="text-xl">Llamada telefonica: <a href="tel:4493880998" style="color: #D918F9;text-decoration:underline;">4493880998</a> </p>
+				</div>
+			</div>
+
+
+
+
+			<div id="modal-empresarial" class=" text-slate-950 hidden w-full fixed top-0 bottom-0 inset-0 m-0 z-30 transition ease-in-out " id="modal-1" style="background-color: hsla(0, 0%, 0%, 0.705);">
+				<button class="cerrar-empresarial text-white absolute top-5 right-5" id="cerrar-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-16 h-16">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+				</svg>
+				</button>
+				<div class=" w-5/6 sm:w-5/6 md:w-2s/3 bg-white z-10 relative m-auto flex gap-8 flex-col justify-center items-center duration-1000 rounded-lg p-8">
+					<div class="flex items-center justify-between">
+						<svg
+						viewBox="200 140 400 350" 
+			
+						class=" w-1/3 sm:w-1/5 md:w-1/5 max-w-52"
+						><defs
+							><style>
+								.cls-3 {
+									fill: #d08dea;
+								}
+								
+								.cls-4 {
+									fill: #000;
+								}
+							</style></defs
+						><circle class="cls-4" cx="321.32" cy="169.15" r="23.91"
+						></circle><circle class="cls-4" cx="446.97" cy="224.91" r="23.91"
+						></circle><circle class="cls-4" cx="358.4" cy="280.15" r="23.91"
+						></circle><circle class="cls-4" cx="234.63" cy="342.92" r="23.91"
+						></circle><circle class="cls-4" cx="332.49" cy="399" r="23.91"
+						></circle><circle class="cls-4" cx="459.72" cy="455.76" r="23.91"
+						></circle><rect
+							class="cls-3"
+							x="353.46"
+							y="154.41"
+							width="142.3"
+							height="31"
+							rx="15.5"></rect><rect
+							class="cls-3"
+							x="476.79"
+							y="209.41"
+							width="76.59"
+							height="31"
+							rx="15.5"></rect><path
+							class="cls-3"
+							d="M416.44,224.65a15.53,15.53,0,0,1-15.5,15.5H250.85a15.21,15.21,0,0,1-2.35-.18h-6.43A12.12,12.12,0,0,0,230,252.09v.6a12.12,12.12,0,0,0,12.11,12.12h70a15.5,15.5,0,0,1,0,31H248.45a43.33,43.33,0,1,1,0-86.66c.48,0,1,0,1.45,0,.31,0,.63,0,.95,0H400.94A15.54,15.54,0,0,1,416.44,224.65Z"
+						></path><rect
+							class="cls-3"
+							x="227.38"
+							y="384.5"
+							width="76.59"
+							height="31"
+							rx="15.5"></rect><rect
+							class="cls-3"
+							x="284.79"
+							y="439.26"
+							width="141.85"
+							height="31"
+							rx="15.5"></rect><rect
+							class="cls-3"
+							x="388.79"
+							y="264.65"
+							width="188.09"
+							height="31"
+							rx="15.5"></rect><path
+							class="cls-3"
+							d="M592.82,370.75a43.33,43.33,0,0,1-43.33,43.33H380.15a15.5,15.5,0,0,1,0-31H548.9a15.45,15.45,0,0,1,2.27.17h4.7A12.12,12.12,0,0,0,568,371.14v-.6a12.12,12.12,0,0,0-12.11-12.12H281.18a15.5,15.5,0,0,1,0-31H549.49A43.33,43.33,0,0,1,592.82,370.75Z"
+						></svg>
+						<h2 class="text-2xl md:text-4xl">Lic. Israel Macías Martinez</h2>
+					</div>
+					<a  href="tel:4494959810" class=" text-xl sm:text-2xl" target="_blank" style="color: #D918F9;text-decoration:underline;">4493275135</a>
+					<a href="mailto:israel.macias@onfiber.com.mx" class=" text-xl sm:text-2xl" style="color: #D918F9;text-decoration:underline;">israel.macias@onfiber.com.mx</a>
+				</div>
+			</div>
+
+
+
+		</section>
+
+
 
 	<section id="acerca de nosotros" class="">
 		<h2 class="text-center text-xl mt-6 mb-2 text-animation">
@@ -109,116 +320,7 @@ import Image1 from "../assets/image1.jpg";
 			</div>
 		</div>
 	</section>
-	<section id="Paquetes" class="">
-		<h2 class="text-center mt-6 text-xl mb-2 text-animation">PAQUETES</h2>
-
-		<div
-			class="mx-24 hidden p-5 mt-10 md:grid md:grid-cols-2 md:mx-6 xl:grid-cols-4 items-stretch gap-10"
-		>
-			<PaqueteCard
-				title="30 Megas Plan básico"
-				phrase="Conexión estable y rápida para tus necesidades diarias en línea."
-				body="Perfecto para navegar, enviar correos y realizar videollamadas en hasta 3 dispositivos simultáneos."
-				price="$300"
-			/>
-
-			<PaqueteCard
-				title="70 Megas Plan Intermedio"
-				phrase="Potencia tu experiencia en línea con alta velocidad y fiabilidad."
-				body="Ideal para streaming HD, descargas rápidas y gaming en hasta 5 dispositivos a la vez."
-				price="$350"
-			/>
-
-			<PaqueteCard
-				title="100 Megas Plan Pro"
-				phrase="Velocidad ultrarrápida para múltiples dispositivos y actividades intensivas en línea."
-				body="Recomendado para hogares con hasta 7 dispositivos, ofreciendo streaming en 4K y descargas rápidas."
-				price="$450"
-			/>
-
-			<PaqueteCard
-				title="200 Megas Plan Master Pro"
-				phrase="Máxima velocidad y rendimiento para las demandas más exigentes de conectividad."
-				body="Diseñado para satisfacer las demandas más exigentes de conectividad, perfecto para familias grandes, home office, gaming de alto rendimiento y más."
-				price="$550"
-			/>
-		</div>
-		<div class="flex items-center justify-between mt-10 mx-3 md:hidden">
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="17"
-				height="33"
-				viewBox="0 0 17 33"
-				fill="none"
-			>
-				<path
-					d="M15.875 31.375L1 16.5L15.875 1.625"
-					stroke="white"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"></path>
-			</svg>
-			<p class="text-xl">Desliza</p>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="18"
-				height="34"
-				viewBox="0 0 18 34"
-				fill="none"
-			>
-				<path
-					d="M1.5 1.83325L16.6667 16.9999L1.5 32.1666"
-					stroke="white"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"></path>
-			</svg>
-		</div>
-
-		<div
-			class="mx-5 flex flex-nowrap overflow-scroll p-5 md:hidden items-stretch gap-10"
-		>
-			<PaqueteCard
-				title="70 Megas Plan Intermedio"
-				phrase="Potencia tu experiencia en línea con alta velocidad y fiabilidad."
-				body="Ideal para streaming HD, descargas rápidas y gaming en hasta 5 dispositivos a la vez."
-				price="$350"
-			/>
-
-			<PaqueteCard
-				title="30 Megas Plan básico"
-				phrase="Conexión estable y rápida para tus necesidades diarias en línea."
-				body="Perfecto para navegar, enviar correos y realizar videollamadas en hasta 3 dispositivos simultáneos."
-				price="$300"
-			/>
-
-			<PaqueteCard
-				title="100 Megas Plan Pro"
-				phrase="Velocidad ultrarrápida para múltiples dispositivos y actividades intensivas en línea."
-				body="Recomendado para hogares con hasta 7 dispositivos, ofreciendo streaming en 4K y descargas rápidas."
-				price="$450"
-			/>
-
-			<PaqueteCard
-				title="200 Megas Plan Master Pro"
-				phrase="Máxima velocidad y rendimiento para las demandas más exigentes de conectividad."
-				body="Diseñado para satisfacer las demandas más exigentes de conectividad, perfecto para familias grandes, home office, gaming de alto rendimiento y más."
-				price="$550"
-			/>
-		</div>
-		<div
-			class="flex flex-col md:flex-row mx-8 md:mx-36 mt-6 gap-6 items-center"
-		>
-			<button class="boton-contratar" style="flex: none;"
-				>INTERNET PARA EMPRESAS</button
-			>
-			<p class="text-xl font mb-6" style="color: #d08dea">
-				Conectividad empresarial confiable y segura para impulsar tu
-				negocio. Desde conexiones de alta velocidad hasta soluciones de
-				red robustas, estamos aquí para potenciar tu éxito comercial.
-			</p>
-		</div>
-	</section>
+	
 
 	<section id="encuentranos">
 		<h2 class="text-center text-xl my-6 text-animation">Encuentranos</h2>
@@ -262,9 +364,8 @@ import Image1 from "../assets/image1.jpg";
 					</svg>
 					<span class="text-2xl">Onfiber</span>
 				</div>
-				<div
-					class="flex flex-row items-center justify-center md:justify-start gap-6 m-5"
-				>
+				
+				<a class="text-2xl flex flex-row items-center justify-center md:justify-start gap-6 m-5" href="https://wa.link/jh5htf" target="_blank">
 					<svg
 						height="56.693px"
 						id="Layer_1"
@@ -296,10 +397,11 @@ import Image1 from "../assets/image1.jpg";
 							></path></g
 						></svg
 					>
-					<span class="text-2xl">4493275135</span>
-				</div>
-				<div
+					4493275135</a>
+				
+				<a
 					class="flex flex-row items-center justify-center md:justify-start gap-6 m-5"
+					href="tel:4493880998"
 				>
 					<svg
 						viewBox="0 0 48 48"
@@ -312,7 +414,7 @@ import Image1 from "../assets/image1.jpg";
 						></path></svg
 					>
 					<span class="text-2xl">4493880998</span>
-				</div>
+				</a>
 				<div
 					class="flex flex-row items-center justify-center md:justify-start gap-6 m-5"
 				>
@@ -342,6 +444,7 @@ import Image1 from "../assets/image1.jpg";
 			</div>
 			<div class="w-full max-w-2xl h-auto max-h-72 sm:max-h-96">
 				<iframe
+					title="ubicación de OnFiber"
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d654.6059896117154!2d-102.30605244286957!3d21.857123975636625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8429ee7f00d90f05%3A0xb7f915c9cc14793f!2sOnFiber!5e0!3m2!1ses-419!2smx!4v1713227013277!5m2!1ses-419!2smx"
 					class="w-full h-80 max-h-72"
 					style="border:0;"
@@ -351,87 +454,49 @@ import Image1 from "../assets/image1.jpg";
 			</div>
 		</div>
 	</section>
-		<div
-			class="flex flex-col px-10 md:px-24 md:flex-row justify-between items-center"
-		>
-			<div class="flex flex-col py-10 gap-7">
-				<a href="">Constancia de coberturra</a>
-				<a href="">Autorización</a>
-				<a href="">Aviso de privacidad</a>
-				<a href="">Código de practica comercial</a>
-				<a href="">Inscripción en el registro publico de concesiones</a>
-			</div>
-			<div>
-				<div class="flex flex-row items-center gap-7 justify-center md:justify-end py-4">
-					<span class=" text-2xl">ONFIBER SA DE CV</span>
-					<svg
-			id="Capa_3"
-			data-name="Capa 3"
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="200 140 400 350" 
 
-			class=" w-1/4 sm:w-1/5 md:w-1/5 "
-			><defs
-				><style>
-					.cls-1 {
-						fill: #d08dea;
-					}
+
+	<script>
+		document.addEventListener("astro:page-load", () => {
+			const botonesContratar = document.querySelectorAll<HTMLButtonElement>(".boton-contratar");
+			const botonesCerrar = document.querySelectorAll<HTMLButtonElement>(".cerrar");
+			const empresarial = document.querySelectorAll<HTMLButtonElement>(".contratar-empresarial")
+			const modal = document.getElementById("modal-contratar") as HTMLElement;
+			const cerrarEmpresarial = document.querySelectorAll<HTMLButtonElement>(".cerrar-empresarial");
+			const modalEmpresarial = document.getElementById("modal-empresarial") as HTMLElement;
+			botonesContratar.forEach((boton) => {
+				boton.addEventListener("click", () => {
+					modal.classList.toggle("hidden");
+					modal.classList.toggle("flex");
+				});
+			});
+
+			botonesCerrar.forEach((boton) => {
+				boton.addEventListener("click", () => {
+					modal.classList.toggle("hidden");
+					modal.classList.toggle("flex");
+				});
+			});
+			empresarial.forEach((boton) => {
+				boton.addEventListener("click", () => {
 					
-					.cls-2 {
-						fill: #fff;
-					}
-				</style></defs
-			><circle class="cls-2" cx="321.32" cy="169.15" r="23.91"
-			></circle><circle class="cls-2" cx="446.97" cy="224.91" r="23.91"
-			></circle><circle class="cls-2" cx="358.4" cy="280.15" r="23.91"
-			></circle><circle class="cls-2" cx="234.63" cy="342.92" r="23.91"
-			></circle><circle class="cls-2" cx="332.49" cy="399" r="23.91"
-			></circle><circle class="cls-2" cx="459.72" cy="455.76" r="23.91"
-			></circle><rect
-				class="cls-1"
-				x="353.46"
-				y="154.41"
-				width="142.3"
-				height="31"
-				rx="15.5"></rect><rect
-				class="cls-1"
-				x="476.79"
-				y="209.41"
-				width="76.59"
-				height="31"
-				rx="15.5"></rect><path
-				class="cls-1"
-				d="M416.44,224.65a15.53,15.53,0,0,1-15.5,15.5H250.85a15.21,15.21,0,0,1-2.35-.18h-6.43A12.12,12.12,0,0,0,230,252.09v.6a12.12,12.12,0,0,0,12.11,12.12h70a15.5,15.5,0,0,1,0,31H248.45a43.33,43.33,0,1,1,0-86.66c.48,0,1,0,1.45,0,.31,0,.63,0,.95,0H400.94A15.54,15.54,0,0,1,416.44,224.65Z"
-			></path><rect
-				class="cls-1"
-				x="227.38"
-				y="384.5"
-				width="76.59"
-				height="31"
-				rx="15.5"></rect><rect
-				class="cls-1"
-				x="284.79"
-				y="439.26"
-				width="141.85"
-				height="31"
-				rx="15.5"></rect><rect
-				class="cls-1"
-				x="388.79"
-				y="264.65"
-				width="188.09"
-				height="31"
-				rx="15.5"></rect><path
-				class="cls-1"
-				d="M592.82,370.75a43.33,43.33,0,0,1-43.33,43.33H380.15a15.5,15.5,0,0,1,0-31H548.9a15.45,15.45,0,0,1,2.27.17h4.7A12.12,12.12,0,0,0,568,371.14v-.6a12.12,12.12,0,0,0-12.11-12.12H281.18a15.5,15.5,0,0,1,0-31H549.49A43.33,43.33,0,0,1,592.82,370.75Z"
-			></svg
-		>
-				</div>
-			</div>
-		</div>
-	</footer>
+					modalEmpresarial.classList.toggle("hidden");
+					modalEmpresarial.classList.toggle("flex");
+				});
+			});
+			cerrarEmpresarial.forEach((boton) => {
+				boton.addEventListener("click", () => {
+					
+					modalEmpresarial.classList.toggle("hidden");
+					modalEmpresarial.classList.toggle("flex");
+				});
+			});
+		});
+	</script>
+	
 
 	<style>
-		.boton-contratar {
+		.boton-contratar, .contratar-empresarial{
 			background-color: white;
 			border: 2px solid black;
 			border-radius: 5px;
